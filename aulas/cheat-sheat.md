@@ -11,6 +11,7 @@ Modelo de sistema de arquivos somente leitura formado em camadas.
 - **inspect imagem** -> retorna um json contendo as informalções de configuração da imagem.
 - **tag imagem nome_tag** -> aplica uma nova tag à imagem.
 - **build arquivo_descritor** -> monta um container a partir de um arquivo descritor, este que possibilita a replicação de containers.
+  - **-t nome** => nome que será atribuído à imagem criada
 - **push**: após adicionar uma nova tag ou buildar uma nova imagem ela pode ser enviada para um repositório local ou o próprio dockerhub.
 
 
