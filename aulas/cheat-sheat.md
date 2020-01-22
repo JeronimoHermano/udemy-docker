@@ -9,9 +9,11 @@ Modelo de sistema de arquivos somente leitura formado em camadas.
 - **ls** -> lista as imagens salvas localmente.
 - **rm imagem:tag** -> remove uma ou mais imagens separadas por espaço, pode-se usar o nome ou id da imagem.
 - **inspect imagem** -> retorna um json contendo as informalções de configuração da imagem.
+  - **--format="{...}"** => argumentos, formatados como json, para buscar atributos da imagem criada.
 - **tag imagem nome_tag** -> aplica uma nova tag à imagem.
 - **build arquivo_descritor** -> monta um container a partir de um arquivo descritor, este que possibilita a replicação de containers.
   - **-t nome** => nome que será atribuído à imagem criada
+  - **--build-arg argumentos** => atribui valores para a imagem a ser buildada, pode ser utilizado para definir condicionais durante o build.
 - **push**: após adicionar uma nova tag ou buildar uma nova imagem ela pode ser enviada para um repositório local ou o próprio dockerhub.
 
 
