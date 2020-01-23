@@ -34,6 +34,7 @@ Usa o sistema de arquivos montado pela imagem para definir processos e subproces
   - **--name nome** => atribui um nome ao container que será executado
   - **-p host:container** => mapeia uma porta do docker em uma porta da máquina host
   - **-v host:container** => mapeia uma pasta do docker em uma pasta da máquina host
+  - **--net *nome_rede*** => define o tipo de rede que se deseja utilizar, quando não definido ele entra no modo *bridge* por padrão.
 
 - **start nome|id** -> inicia um container já criado através do nome ou do id dele
   - **ai** => acessa o terminal em modo interativo
@@ -60,3 +61,10 @@ Usa o sistema de arquivos montado pela imagem para definir processos e subproces
     - EX: *docker image tag exemplo usuario/meu_exemplo:1.0*
 3. Logar no dockerhub: *docker login --username=usuario*
 4. docker image push usuario/meu_exemplo
+
+## Network
+
+### $ docker network
+- **ls** -> listar os drivers de rede.
+- **create --driver *driver_name* *nome*** --> ciar uma nova rede
+  - **connect *rede* *container*** => conecta o container a uma outra rede
