@@ -1,3 +1,7 @@
+<style>
+    * {text-align: justify;}
+</style>
+
 # Cheat sheat
 
 ## Image
@@ -35,3 +39,24 @@ Usa o sistema de arquivos montado pela imagem para definir processos e subproces
   - **ai** => acessa o terminal em modo interativo
 
 ## Dockerfile
+
+- **FROM *image*** -> indica qual imagem será utilizada como base para criação da nova imagem.
+- **RUN *comandos*** -> executa os comandos como se fosse no modo shell
+    - É muito comum concatenar comandos para evitar que seja criado um número excessivo de camadas.
+    - Uma boa prática é deixar as partes mais mutáveis no final do arquivo, deste modo as camadas internas são reaproveitadas.
+- **COPY *origem_host dest_img**** -> copia um arquivo da máquina hospedeira para a imagem.
+- **USER *nome*** -> define o usuário da imagem.
+- **VOLUME *diretório*** -> instrui ao container a criar um volume para um diretório na imagem, simplificando o compartilhamento dos dados para backup.
+- **WORKDIR *diretório*** -> define o diretório de trabalho.
+- **EXPOSE *porta*** -> expões uma porta do container para acesso, esta ainda pode ser mapeada.
+- **ENTRYPOINT [*diretório*]** -> processo que será executado quando o container estiver iniciando.
+- **CMD [*comando*]** -> comando que será passado para o ENTRYPOINT.
+
+## Updaload para DockerHub
+
+1. Cadastro em hub.docker.com
+2. Selecionar uma imagem e atribuir as tags adequadas à elas
+    - Colocar a tag no formato *usuário/nome_imagem:tag*
+    - EX: *docker image tag exemplo usuario/meu_exemplo:1.0*
+3. Logar no dockerhub: *docker login --username=usuario*
+4. docker image push usuario/meu_exemplo

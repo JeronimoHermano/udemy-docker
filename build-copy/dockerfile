@@ -1,0 +1,5 @@
+FROM nginx:latest
+LABEL manteiner="Jerônimo Hermano"
+
+RUN echo '<h1> Página 2 </h2>' > /usr/share/nginx/html/pag2.html
+COPY *.html /usr/share/nginx/html/
